@@ -7,7 +7,7 @@ const GameProvider = ({children}) => {
 
     const newTour = item => {
         setTour(tour + 1);
-        console.log(tour);
+        return tour
     }
 
     const randomQuestion = item => {
@@ -27,6 +27,7 @@ const GameProvider = ({children}) => {
                 newTour,
                 randomQuestion,
                 QuestionAnswers,
+                tour,
             }}
         >
             {children}
