@@ -7,6 +7,9 @@ import { useGame } from '../context/game'
 
 function StartPage() {
     const { newTour } = useGame();
+    let totalPoint = localStorage.getItem('totalPoint') || 0;
+    let totalQuestion = JSON.parse(localStorage.getItem('results')) || 0;
+    let correctAnswer = JSON.parse(localStorage.getItem('correctAnswers')) || 0;
 
     return (
         <div className='startPage'>
@@ -15,13 +18,13 @@ function StartPage() {
 
             <div className="totalData">
                 <div className="totalPoint">
-                    <p>Total Point: 129</p>
+                    <p>Total Point: {totalPoint}</p>
                 </div>
                 <div className="totalQuestions">
-                    <p>Total Questions: 40</p>
+                    <p>Total Questions: { totalQuestion ? totalQuestion.length - 1 : 0}</p>
                 </div>
                 <div className="correctAnswers">
-                    <p>Correct Answers: 32</p>
+                    <p>Correct Answers: {correctAnswer ? correctAnswer.length : 0}</p>
                 </div>
             </div>
 

@@ -17,6 +17,7 @@ function ResultPage() {
   let resultsArr = JSON.parse(localStorage.getItem('results')).slice(0, 10).reverse();
 
   let correctAnswers = resultsArr.filter(item => item[1] === 'correct');
+  localStorage.setItem('correctAnswers', JSON.stringify(correctAnswers));
   console.log(correctAnswers);
 
   return (
