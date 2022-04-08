@@ -8,14 +8,18 @@ function QuestionPage() {
   const [question, setQuestion] = useState({first:0, second:0, result:0})
   const [answer, setAnswer] = useState()
   const [score, setScore] = useState(0)
-  const [questionNumber, setQuestionNumber] = useState(1)
+  const [questionNumber, setQuestionNumber] = useState(0)
   const {randomQuestion, QuestionAnswers, tour} = useGame();
 
   useEffect(() => {
-    if (questionNumber <=10) {
+    if (questionNumber === 0) {
+      setQuestion(randomQuestion());
+    }
+    else if (questionNumber <=10) {
       setTimeout(() => {
-        setQuestion(randomQuestion())
-      }, 3000)
+        setQuestion(randomQuestion());
+        setAnswer('');
+      }, 1000)
     }
     
   }, [questionNumber]);
@@ -28,6 +32,7 @@ function QuestionPage() {
       setAnswer('correct')
       localStorage.setItem('results', JSON.stringify([[result, "correct"]].concat(JSON.parse(localStorage.getItem('results')))));
       setScore(score + Math.ceil(Math.pow(option, 0.5)))
+      localStorage.setItem('score', score + Math.ceil(Math.pow(option, 0.5)));
     } else {
       setAnswer('wrong');
       localStorage.setItem('results', JSON.stringify([[result, "wrong"]].concat(JSON.parse(localStorage.getItem('results')))));
@@ -40,7 +45,7 @@ function QuestionPage() {
   return (
     <> 
     {
-      questionNumber === 11 
+      questionNumber === 10 
       ? <Navigate to="/result" /> /* ??????????????? */
       : (
         <div className={`questionPage ${answer}`}>
@@ -48,7 +53,7 @@ function QuestionPage() {
           <div className="data">
             <div className="score">Score : {score}</div>
             <div className="tour">Tour: {tour}</div>
-            <div className="questions">Question : {questionNumber}/10</div>
+            <div className="questions">Question : {questionNumber + 1}/10</div>
           </div>
           <div className="question">
             <div>{question.first} x {question.second} ?</div>

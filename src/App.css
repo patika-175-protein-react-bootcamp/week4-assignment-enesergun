@@ -49,3 +49,13 @@ body {
 button {
   background-color: transparent;
 }
+
+.resultPage {
+  display: flex;
+    flex-direction: row;
+    height: 100vh;
+    background: rgba(45, 45, 45, 1);
+    justify-content: space-around;
+    align-items: center;
+
+}
