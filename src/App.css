@@ -66,12 +66,53 @@ button {
   font-size: 25px;
 
 }
-
 .question {
-  display: inline;
+  width: 700px;
+  height: 650px;
+  font-size: 50px;
+  background-image: url(./constants/icons/BoardAndStickMan.svg);
+  background-repeat: no-repeat;
+  background-position: right;
 }
 .question div {
   display: inherit;
+  position: relative;
+  top: 30%;
+  left: 29%;
+}
+.BoardAndStickMan svg {
+  padding: 40px 0 0;
+}
+
+.OptionButtonWrapper {
+  float: right;
+  width: 500px;
+  height: 100px;
+  position: relative;
+  bottom: 291px;
+}
+.OptionButton {
+  width: 100px;
+  height: 90px;
+  font-size: 30px;
+  color: white;
+  border: none;
+  background-image: url(./constants/icons/Option.svg);
+  background-repeat: no-repeat;
+  
+}
+.first {
+  position: relative;
+  bottom: 50px;
+  left: 76px;
+}
+.second {
+  position: relative;
+  top: 80px;
+}
+.third {
+  position: relative;
+  top: 10px;
 }
 
 
@@ -123,7 +164,7 @@ button {
   width: 447px;
   height: 139px;
   background-image: url(./constants/icons/ellipse.svg);
-  background-repeat: norepeat;
+  background-repeat: no-repeat;
   border: none;
   font-size: 60px;
 }
