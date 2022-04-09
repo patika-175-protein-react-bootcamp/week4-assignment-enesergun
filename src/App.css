@@ -54,6 +54,13 @@ button {
   background-color: transparent;
 }
 
+.linkButton {
+  text-decoration: none;
+  text-decoration-color: white;
+  color: white;
+  font-family: 'Handlee', cursive;
+}
+
 .QuestionData,
 .QuestionContainer {
   display: flex;

@@ -10,7 +10,7 @@ const TourDataInformation = ({score, AnsweredQuestion, correctAnswers}) => {
           <div className="correctAnswers">Correct Answers: {correctAnswers}</div>
           <div className="restartButton">
             {/* <StartEllipse /> */}
-            <button className=''> <Link to="/">Restart</Link></button> {/* küçülecek */}
+            <button className=''> <Link className='linkButton' to="/">Restart</Link></button> {/* küçülecek */}
           </div>
         </div>
         </>
