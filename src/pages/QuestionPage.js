@@ -10,6 +10,7 @@ function QuestionPage() {
   const [score, setScore] = useState(0)
   const [questionNumber, setQuestionNumber] = useState(0)
   const {randomQuestion, QuestionAnswers, tour} = useGame();
+  const [buttonDisabled, setButtonDisabled] = useState('');
 
   useEffect(() => {
     if (questionNumber === 0) {
@@ -19,7 +20,8 @@ function QuestionPage() {
       setTimeout(() => {
         setQuestion(randomQuestion());
         setAnswer('');
-      }, 1000)
+        setButtonDisabled('');
+      }, 3000)
     }
     
   }, [questionNumber]);
@@ -38,6 +40,7 @@ function QuestionPage() {
       localStorage.setItem('results', JSON.stringify([[result, "wrong"]].concat(JSON.parse(localStorage.getItem('results')))));
     }
     setQuestionNumber(questionNumber + 1);
+    setButtonDisabled('disabled');
   }
 
 
@@ -64,9 +67,22 @@ function QuestionPage() {
 
           
           <div className="OptionButtonWrapper">
-            <button className='OptionButton first' onClick={(e) => handleAnswer(e.target.textContent)}>{(question.first - 1) * question.second}</button>
-            <button className='OptionButton second' onClick={(e) => handleAnswer(e.target.textContent)}>{question.first * question.second}</button>
-            <button className='OptionButton third' onClick={(e) => handleAnswer(e.target.textContent)} >{question.first * (question.second - 1)}</button>          
+            {
+              buttonDisabled === 'disabled' 
+              ? 
+              <>
+                <button className='OptionButton first' onClick={(e) => handleAnswer(e.target.textContent)} disabled>{(question.first - 1) * question.second}</button>
+                <button className='OptionButton second' onClick={(e) => handleAnswer(e.target.textContent)} disabled>{question.first * question.second}</button>
+                <button className='OptionButton third' onClick={(e) => handleAnswer(e.target.textContent)} disabled>{question.first * (question.second - 1)}</button> 
+              </>
+              : 
+              <>
+                <button className='OptionButton first' onClick={(e) => handleAnswer(e.target.textContent)} >{(question.first - 1) * question.second}</button>
+                <button className='OptionButton second' onClick={(e) => handleAnswer(e.target.textContent)} >{question.first * question.second}</button>
+                <button className='OptionButton third' onClick={(e) => handleAnswer(e.target.textContent)} >{question.first * (question.second - 1)}</button> 
+              </>
+
+            }          
           </div>
         </div>
       ) 

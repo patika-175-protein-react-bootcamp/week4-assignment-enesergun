@@ -99,19 +99,17 @@ button {
   border: none;
   background-image: url(./constants/icons/Option.svg);
   background-repeat: no-repeat;
-  
+  position: relative;
+  cursor: pointer;
 }
 .first {
-  position: relative;
   bottom: 50px;
   left: 76px;
 }
 .second {
-  position: relative;
   top: 80px;
 }
 .third {
-  position: relative;
   top: 10px;
 }
 
