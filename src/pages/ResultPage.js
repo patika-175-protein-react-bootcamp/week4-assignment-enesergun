@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react'
-import {Link} from 'react-router-dom'
-import { StartEllipse } from '../constants/icons'
+import QuestionResults from '../components/Question'
+import Title from '../components/Title'
+import TourDataInformation from '../components/TourDataInformation'
+
 
 
 function ResultPage() {
@@ -26,34 +28,20 @@ function ResultPage() {
   return (
     <div className='resultPage'>
       <div className="final">
-        <div className="title">Final</div>
-        <div className="headerUnderLine">
-          <svg width="500" height="7" viewBox="0 0 640 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M639.998 1.72994C641.22 -1.50429 12.5197 0.574858 5.18769 1.72994C-2.14435 2.88503 -1.30127 5.72697 5.18769 9.1225C11.6766 12.518 619.626 4.96418 619.626 4.96418C619.626 4.96418 638.776 4.96418 639.998 1.72994Z" fill="#FF0000"/>
-          </svg>
-        </div>
-        <div className="data">
-          <div className="score">Point : {tourPoint}</div>
-          <div className="questions">Questions : {resultsArr.length}</div>
-          <div className="correctAnswers">Correct Answers: {correctAnswers.length}</div>
-          <div className="restartButton">
-            {/* <StartEllipse /> */}
-            <button className=''> <Link to="/">Restart</Link></button> {/* küçülecek */}
-          </div>
-        </div>
+        <Title title={'Final'}/>
+        <TourDataInformation score={tourPoint} AnsweredQuestion={resultsArr.length} correctAnswers={correctAnswers.length}/>
+        
       </div>
+
       <div className="allQuestion">
-        <div className="title">All Question</div>
-        <div className="headerUnderLine">
-          <svg width="540" height="7" viewBox="0 0 640 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M639.998 1.72994C641.22 -1.50429 12.5197 0.574858 5.18769 1.72994C-2.14435 2.88503 -1.30127 5.72697 5.18769 9.1225C11.6766 12.518 619.626 4.96418 619.626 4.96418C619.626 4.96418 638.776 4.96418 639.998 1.72994Z" fill="#FF0000"/>
-          </svg>
-        </div>
+        <Title title={'All Question'} />
+
         {
           resultsArr?.map((item, index) => (
             <div className="questionResult" key={index}>
+              {/* <QuestionResults item={item} /> */}
               <span>{item[0]}</span>
-              <span className="answer">
+            <span className="answer">
                 { 
                   item[1] === 'correct' 
                   ? 
@@ -66,7 +54,7 @@ function ResultPage() {
                   </svg>
  
                 }
-              </span>
+            </span>
             </div>
           ))
         }

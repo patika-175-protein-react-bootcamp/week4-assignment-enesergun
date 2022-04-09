@@ -1,16 +1,17 @@
 import React, {useEffect, useState} from 'react'
 import { Navigate } from 'react-router-dom'
-import { BoardAndStickMan } from '../constants/icons'
 import {useGame} from '../context/game'
-import ResultPage from './ResultPage'
 import Option from '../components/Option'
+import DataInformation from '../components/DataInformation'
+import Question from '../components/Question'
+
 
 function QuestionPage() {
   const [question, setQuestion] = useState({first:0, second:0, result:0})
   const [answer, setAnswer] = useState()
   const [score, setScore] = useState(0)
   const [questionNumber, setQuestionNumber] = useState(0)
-  const {randomQuestion, QuestionAnswers, tour} = useGame();
+  const {randomQuestion, tour} = useGame();
   const [buttonDisabled, setButtonDisabled] = useState('');
 
   useEffect(() => {
@@ -48,10 +49,7 @@ function QuestionPage() {
     let random = Math.floor(Math.random() * 3) + 1;
     return random
   }
-
-  let arr = [0, 1, 2];
-  
-  
+    
   return (
     <> 
     {
@@ -59,30 +57,24 @@ function QuestionPage() {
       ? <Navigate to="/result" /> /* ??????????????? */
       : (
         <div className={`questionPage ${answer}`}>
+
           <div className="QuestionData">
-            <div className="score">Score : {score}</div>
-            <div className="tour">Tour: {tour}</div>
-            <div className="RemainderQuestion">Question : {questionNumber + 1}/10</div>
+            <DataInformation score={score} tour={tour} RemainderQuestion={questionNumber}/>  
           </div>
-
           
-        
-
-        <div className="question">
-            <div >{question.first} x {question.second} ?</div>
-        </div>          
-
+          <div className="question">
+            <Question question={question}/>
+          </div>          
           
           <div className="OptionButtonWrapper">
             {
-              <Option key={0} option={randomOption()} handleAnswer={handleAnswer} buttonDisabled={buttonDisabled} question={question} />
-              
+              <Option key={0} option={randomOption()} handleAnswer={handleAnswer} buttonDisabled={buttonDisabled} question={question} />              
             }          
           </div>
+
         </div>
       ) 
-    }
-    
+    } 
     </>
   )
 }
