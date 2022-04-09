@@ -35,8 +35,11 @@ body {
   cursor: pointer;
 }
 
+/* QUESTION PAGE */
+
 .questionPage {
   background: rgba(45, 45, 45, 1);
+  height: 100vh;
 }
 
 .correct {
@@ -50,6 +53,29 @@ body {
 button {
   background-color: transparent;
 }
+
+.QuestionData,
+.QuestionContainer {
+  display: flex;
+}
+.QuestionData {
+  float: right;
+  padding: 40px 0;
+  width: 400px;
+  justify-content: space-evenly;
+  font-size: 25px;
+
+}
+
+.question {
+  display: inline;
+}
+.question div {
+  display: inherit;
+}
+
+
+/* RESULT PAGE */
 
 .resultPage {
   display: flex;

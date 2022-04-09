@@ -2,7 +2,6 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import '../App.css';
 import { StartEllipse } from '../constants/icons'
-import { HeaderUnderLine } from '../constants/icons'
 import { useGame } from '../context/game'
 
 function StartPage() {
