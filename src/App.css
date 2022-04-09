@@ -15,8 +15,9 @@ body {
   height: 100vh;
 }
 .title {
-  font-size: 82px;
+  font-size: 70px;
   color: rgba(255, 0, 0, 1);
+  line-height: 15.7px;
 }
 
 .totalData {
@@ -57,5 +58,46 @@ button {
     background: rgba(45, 45, 45, 1);
     justify-content: space-around;
     align-items: center;
+}
 
+.final {
+  font-size: 44px;
+  text-align: center;
+  height: 650px;
+  padding-top: 100px;
+}
+.data {
+  margin-top: 30px;
+}
+
+.data div{
+  margin-bottom: 30px;
+}
+
+.allQuestion {
+  font-size: 34px;
+  text-align: center;
+  height: 650px;
+  padding-top: 100px;
+}
+
+.questionResult {
+  width: 300px;
+  margin: 0 auto;
+}
+
+.headerUnderLine {
+  margin-bottom: 25px;
+}
+
+.answer {
+  float: right;
+}
+.restartButton button {
+  width: 447px;
+  height: 139px;
+  background-image: url(./constants/icons/ellipse.svg);
+  background-repeat: norepeat;
+  border: none;
+  font-size: 60px;
 }
