@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from 'react'
 import { Navigate } from 'react-router-dom'
-import { BoardAndStickMan, Option } from '../constants/icons'
+import { BoardAndStickMan } from '../constants/icons'
 import {useGame} from '../context/game'
 import ResultPage from './ResultPage'
+import Option from '../components/Option'
 
 function QuestionPage() {
   const [question, setQuestion] = useState({first:0, second:0, result:0})
@@ -43,7 +44,13 @@ function QuestionPage() {
     setButtonDisabled('disabled');
   }
 
+  const randomOption = () => {
+    let random = Math.floor(Math.random() * 3) + 1;
+    return random
+  }
 
+  let arr = [0, 1, 2];
+  
   
   return (
     <> 
@@ -68,20 +75,8 @@ function QuestionPage() {
           
           <div className="OptionButtonWrapper">
             {
-              buttonDisabled === 'disabled' 
-              ? 
-              <>
-                <button className='OptionButton first' onClick={(e) => handleAnswer(e.target.textContent)} disabled>{(question.first - 1) * question.second}</button>
-                <button className='OptionButton second' onClick={(e) => handleAnswer(e.target.textContent)} disabled>{question.first * question.second}</button>
-                <button className='OptionButton third' onClick={(e) => handleAnswer(e.target.textContent)} disabled>{question.first * (question.second - 1)}</button> 
-              </>
-              : 
-              <>
-                <button className='OptionButton first' onClick={(e) => handleAnswer(e.target.textContent)} >{(question.first - 1) * question.second}</button>
-                <button className='OptionButton second' onClick={(e) => handleAnswer(e.target.textContent)} >{question.first * question.second}</button>
-                <button className='OptionButton third' onClick={(e) => handleAnswer(e.target.textContent)} >{question.first * (question.second - 1)}</button> 
-              </>
-
+              <Option key={0} option={randomOption()} handleAnswer={handleAnswer} buttonDisabled={buttonDisabled} question={question} />
+              
             }          
           </div>
         </div>
