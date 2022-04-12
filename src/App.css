@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
+
+
+body {
+  font-family: 'Handlee', cursive;
+  color: white;
+}
+
+.startPage {
+  background: rgba(45, 45, 45, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.title {
+  font-size: 70px;
+  color: rgba(255, 0, 0, 1);
+  line-height: 56.7px;
+}
+
+.totalData {
+  font-size: 50px;
+}
+
+.totalData p {
+  margin-bottom: 30px;
+}
+
+.startButton span {
+  font-size: 50px;
+  position: absolute;
+  transform: translate(-277px, 37px);
+  cursor: pointer;
+}
+
+/* QUESTION PAGE */
+
+.questionPage {
+  background: rgba(45, 45, 45, 1);
+  height: 100vh;
+}
+
+.correct {
+  background: rgba(0, 191, 99, 1);
+}
+
+.wrong {
+  background: rgba(250, 0, 0, 1);
+}
+
+button {
+  background-color: transparent;
+}
+
+.linkButton {
+  text-decoration: none;
+  text-decoration-color: white;
+  color: white;
+  font-family: 'Handlee', cursive;
+}
+
+.QuestionData,
+.QuestionContainer {
+  display: flex;
+}
+.QuestionData {
+  float: right;
+  padding: 40px 0;
+  width: 400px;
+  justify-content: space-evenly;
+  font-size: 25px;
+
+}
+.question {
+  width: 700px;
+  height: 650px;
+  font-size: 50px;
+  background-image: url(./constants/icons/BoardAndStickMan.svg);
+  background-repeat: no-repeat;
+  background-position: right;
+}
+.question div {
+  display: inherit;
+  position: relative;
+  top: 30%;
+  left: 29%;
+}
+.BoardAndStickMan svg {
+  padding: 40px 0 0;
+}
+
+.OptionButtonWrapper {
+  float: right;
+  width: 500px;
+  height: 100px;
+  position: relative;
+  bottom: 291px;
+}
+.OptionButton {
+  width: 150px;
+  height: 130px;
+  font-size: 50px;
+  color: white;
+  border: none;
+  background-image: url(./constants/icons/Option.svg);
+  background-repeat: no-repeat;
+  position: relative;
+  cursor: pointer;
+}
+.x {
+  position: absolute;
+}
+.OptionButtonWrapper > div:nth-child(1) {
+  bottom: 104px;
+  left: 76px;
+}
+.OptionButtonWrapper > div:nth-child(2) {
+  top: 60px;
+  left: 75px;
+}
+.OptionButtonWrapper > div:nth-child(3) {
+  top: -33px;
+  left: 227px;
+}
+
+
+/* RESULT PAGE */
+
+.resultPage {
+  display: flex;
+    flex-direction: row;
+    height: 100vh;
+    background: rgba(45, 45, 45, 1);
+    justify-content: space-around;
+    align-items: center;
+}
+
+.final {
+  font-size: 44px;
+  text-align: center;
+  height: 650px;
+  padding-top: 100px;
+}
+.data {
+  margin-top: 30px;
+}
+
+.data div{
+  margin-bottom: 30px;
+}
+
+.allQuestion {
+  font-size: 34px;
+  text-align: center;
+  height: 650px;
+  padding-top: 100px;
+}
+
+.questionResult {
+  width: 300px;
+  margin: 0 auto;
+}
+
+.headerUnderLine {
+  margin-bottom: 25px;
+}
+
+.answer {
+  float: right;
+}
+.restartButton button {
+  width: 447px;
+  height: 139px;
+  background-image: url(./constants/icons/ellipse.svg);
+  background-repeat: no-repeat;
+  border: none;
+  font-size: 60px;
+}
