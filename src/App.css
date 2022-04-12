@@ -99,9 +99,9 @@ button {
   bottom: 291px;
 }
 .OptionButton {
-  width: 100px;
-  height: 90px;
-  font-size: 30px;
+  width: 150px;
+  height: 130px;
+  font-size: 50px;
   color: white;
   border: none;
   background-image: url(./constants/icons/Option.svg);
@@ -109,15 +109,20 @@ button {
   position: relative;
   cursor: pointer;
 }
-.first {
-  bottom: 50px;
+.x {
+  position: absolute;
+}
+.OptionButtonWrapper > div:nth-child(1) {
+  bottom: 104px;
   left: 76px;
 }
-.second {
-  top: 80px;
+.OptionButtonWrapper > div:nth-child(2) {
+  top: 60px;
+  left: 75px;
 }
-.third {
-  top: 10px;
+.OptionButtonWrapper > div:nth-child(3) {
+  top: -33px;
+  left: 227px;
 }
 
 
