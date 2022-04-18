@@ -1,5 +1,5 @@
 # Demo
-[Demoya buradan ulaşabilirsiniz](https://protein-bootcamp-week4.vercel.app/)
+[Demoya buradan ulaşabilirsiniz](https://mathematics-game-react.vercel.app/)
 
 # Getting Started with Create React App
 
